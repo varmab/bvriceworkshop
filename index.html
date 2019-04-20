@@ -1,6 +1,160 @@
 <html>
     <head>  
         <title>BVRICE Workshop</title>
+        <script>
+            var myName="Varma";
+            var age=46;
+            var isStudent=false;
+
+            age="Fourty six";
+
+            var x;
+
+            var color="red"
+
+            if(color=="red"){
+                console.log("red")
+            }
+            else
+            {
+                console.log("unknown")
+            }
+
+            var a=1;
+            if(a){
+
+            }
+            else{
+
+            }
+
+            switch(color){
+                case "red":
+                    console.log("red");
+                    break;
+                case "black":
+                    console.log("black");
+                    break;
+                default:
+                console.log("unknow");
+            }
+
+            var student={
+                name:"Varma",
+                age:46,
+                isStudent:false,
+                "college name":"BVRICE"
+            }
+
+            console.log(add(1,2));
+
+
+            //JavaScript Hoisting
+
+            //function declaration
+            function add(a,b){
+                return a+b;
+            }
+
+            //console.log(sum(1,2));
+
+
+            //function expression
+            var sum=function(a,b){
+                return a+b;
+            }
+
+
+            console.log("Welcome to " + myName)
+
+            var myNumbers=["one","two","three"]
+
+            myNumbers.push("four");
+            myNumbers.unshift("zero");
+
+            myNumbers.pop();
+            myNumbers.shift();
+
+            myNumbers.forEach(function(value){
+                console.log(value)
+            })
+
+            var myMarks=[34,50,65];
+
+            var myNewMarks=myMarks.map(function(mark){
+                return mark+10;
+            })
+
+
+            var movies=[
+                {
+                    id:1,
+                    title:"Bahubali",
+                    actor:"Prabhas",
+                    revenue:300,
+                    theaters:["A","B"]
+                },
+                {
+                    id:2,
+                    title:"Adhurs",
+                    actor:"NTR",
+                    revenue:75,
+                    theaters:["C","D"]
+                },
+                {
+                    id:3,
+                    title:"Kushi",
+                    revenue:15,
+                    actor:"Pavan",
+                    theaters:["C","D"]
+                }
+            ]
+
+            //each, some, map, reduce, filter
+
+            //is All movies crossed 100cr?
+
+            var isAll100=movies.every(function(movie){
+                return movie.revenue>100;
+            })
+
+            console.log(isAll100)
+
+            //list of actors ["Prabhas","NTR","Pavan"]
+
+            var actors=movies.map(function(movie){
+                return movie.actor;
+            })
+            console.log(actors)
+
+            var totalReveue=movies.reduce(function(total,movie){
+                return total+movie.revenue
+            },0)
+            console.log(totalReveue)
+            //Prabhas,NTR,Pavan
+
+            var actorsList=movies.reduce(function(actors,movie){
+                if(actors=="") return movie.actor;
+                return actors + "," + movie.actor;
+            },'')
+            console.log(actorsList)
+
+            //["A","B","C","D"]
+            var theaters=movies.reduce(function(theaters,movie){
+                movie.theaters.forEach(function(theater){
+                    if(theaters.indexOf(theater)==-1)
+                    {
+                        theaters.push(theater)
+                    }
+                    
+                })
+
+                return theaters;
+            },[])
+
+            console.log(theaters)
+            
+        </script>
     </head>
     <body>
         <h1>Welcome to BVRICE Workshop</h1>
